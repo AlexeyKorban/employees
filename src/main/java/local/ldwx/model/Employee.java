@@ -23,6 +23,15 @@ public class Employee implements Comparable<Employee>{
     private final Map<ContactType, String> contacts = new EnumMap<>(ContactType.class);
     private final Map<SectionType, Section> sections = new EnumMap<>(SectionType.class);
 
+    public Employee() {
+    }
+
+    public Employee(String uuid, String fullName) {
+        Objects.requireNonNull(uuid, "uuid must not be null");
+        Objects.requireNonNull(fullName, "fullName must not be null");
+        this.uuid = uuid;
+        this.fullName = fullName;
+    }
 
     public String getUuid() {
         return uuid;

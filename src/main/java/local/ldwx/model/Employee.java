@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Employee implements Comparable<Employee>{
 
-    private static final Employee EMPTY = new Employee();
+    public static final Employee EMPTY = new Employee();
 
     static {
         EMPTY.setSection(SectionType.OBJECTIVE, TextSection.EMPTY);

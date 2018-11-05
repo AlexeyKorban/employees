@@ -1,3 +1,8 @@
+DROP TABLE IF EXISTS section;
+DROP TABLE IF EXISTS contact;
+DROP TABLE IF EXISTS employee;
+DROP SEQUENCE IF EXISTS global_seq;
+
 CREATE TABLE employee (
   uuid CHAR(36) PRIMARY KEY NOT NULL,
   full_name TEXT not null

@@ -1,6 +1,7 @@
 package local.ldwx.web;
 
 import local.ldwx.model.*;
+import local.ldwx.storage.SqlStorage;
 import local.ldwx.storage.Storage;
 import local.ldwx.util.Config;
 import local.ldwx.util.DateUtil;
@@ -16,13 +17,14 @@ import java.util.List;
 
 public class EmployeeServlet extends HttpServlet {
 
-    private Storage storage;
+    private Storage storage = new SqlStorage("jdbc:postgresql://localhost:5432/employees", "postgres", "postgres");
 
-    @Override
+/*    @Override
     public void init() throws ServletException {
         super.init();
         storage = Config.get().getStorage();
-    }
+                new SqlStorage("jdbc:postgresql://localhost:5432/employees", "postgres", "postgres");
+    }*/
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

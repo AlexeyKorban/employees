@@ -4,8 +4,6 @@ import local.ldwx.storage.Storage;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ConfigTest {
 
     @Test

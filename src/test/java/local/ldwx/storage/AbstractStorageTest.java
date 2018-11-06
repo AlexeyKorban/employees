@@ -4,7 +4,6 @@ import local.ldwx.exception.ExistStorageException;
 import local.ldwx.exception.NotExistStorageException;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
 import static local.ldwx.util.TestData.*;

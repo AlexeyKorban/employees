@@ -1,7 +1,5 @@
 package local.ldwx.storage.sql;
 
-import local.ldwx.exception.ExistStorageException;
-import local.ldwx.exception.NotExistStorageException;
 import local.ldwx.exception.StorageException;
 
 import java.sql.Connection;

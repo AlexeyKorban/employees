@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Config {
-    private static final String PROPS = "C:\\Projects\\employees\\src\\main\\resources\\db\\employees.properties";
+    private static final String PROPS = "D:\\Projects\\employees\\src\\main\\resources\\db\\employees.properties";
     private static final Config INSTANCE = new Config();
 
     private final Storage storage;

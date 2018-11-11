@@ -3,6 +3,7 @@ package local.ldwx.model;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Employee implements Comparable<Employee>{
 
@@ -24,6 +25,10 @@ public class Employee implements Comparable<Employee>{
     private final Map<SectionType, Section> sections = new EnumMap<>(SectionType.class);
 
     public Employee() {
+    }
+
+    public Employee(String fullName) {
+        this(UUID.randomUUID().toString(), fullName);
     }
 
     public Employee(String uuid, String fullName) {

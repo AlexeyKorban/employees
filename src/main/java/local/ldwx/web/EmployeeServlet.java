@@ -37,6 +37,7 @@ public class EmployeeServlet extends HttpServlet {
         switch (action) {
             case ("delete"):
                 storage.delete(uuid);
+                resp.sendRedirect("employees");
                 return;
             case ("view"):
                 e = storage.get(uuid);
@@ -45,7 +46,7 @@ public class EmployeeServlet extends HttpServlet {
                 e = Employee.EMPTY;
                 break;
             case ("edit"):
-                e = storage.get("uuid");
+                e = storage.get(uuid);
                 for (SectionType type : SectionType.values()) {
                     Section section = e.getSection(type);
                     switch (type) {
@@ -57,7 +58,7 @@ public class EmployeeServlet extends HttpServlet {
                             break;
                         case QUALIFICATIONS:
                             if (section == null) {
-                                section = TextSection.EMPTY;
+                                section = ListSection.EMPTY;
                             }
                             break;
                         case EXPERIENCE:
@@ -94,7 +95,7 @@ public class EmployeeServlet extends HttpServlet {
         final boolean isCreate = (uuid == null || uuid.length() == 0);
         Employee e;
         if (isCreate) {
-            e = new Employee();
+            e = new Employee(fullName);
         } else {
             e = storage.get(uuid);
             e.setFullName(fullName);
@@ -153,6 +154,6 @@ public class EmployeeServlet extends HttpServlet {
         } else {
             storage.update(e);
         }
-        resp.sendRedirect("employee");
+        resp.sendRedirect("employees");
     }
 }

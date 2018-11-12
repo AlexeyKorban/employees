@@ -21,7 +21,7 @@
     <div class="header">
         <div class="logo"><a href="">Our<span class="black">Company</span><span class="gray">.ru</span></a><p>ГК Компания</p></div>
         <ul class="nav">
-            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="/employees" class="active">Главная</a></li>
             <li><a href="#">О нас</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Контакты</a></li>
@@ -77,7 +77,7 @@
         </div>
     </div>
     <div class="footer">
-        <p>&copy; Создано для внутреннего использования <a href="#">Главная</a></p>
+        <p>&copy; Создано для внутреннего использования <a href="/employees">Главная</a></p>
     </div>
 </div>
 </body>

@@ -1,6 +1,6 @@
-<%@ page import="local.ldwx.model.TextSection" %>
 <%@ page import="local.ldwx.model.ListSection" %>
 <%@ page import="local.ldwx.model.OrganizationSection" %>
+<%@ page import="local.ldwx.model.TextSection" %>
 <%@ page import="local.ldwx.util.HtmlUtil" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
@@ -22,12 +22,27 @@
         <div class="logo"><a href="">Our<span class="black">Company</span><span class="gray">.ru</span></a>
             <p>ГК Компания</p></div>
         <ul class="nav">
-            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="/employees" class="active">Главная</a></li>
             <li><a href="#">О нас</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Контакты</a></li>
         </ul>
     </div>
+    <div class="content">
+        <div class="rightCol">
+            <ul class="rightNav">
+                <li><a href="#">Департамент продаж</a></li>
+                <li><a href="#">Депортамент системной интеграции</a></li>
+                <li><a href="#">Департамент юридической деятельности</a></li>
+                <li><a href="#">Департамент сервиса</a></li>
+                <li><a href="#">Департамент логистики и склада</a></li>
+            </ul>
+            <div class="block">
+                <h3>Корпоративное кафе</h3>
+                <p><i>Уважаемые коллеги! С 11 ноября корпоративное кафе будет закрыто на реконструкцию.</i></p>
+                <p><a href="#" class="more">Читать далее »</a></p>
+            </div>
+        </div>
     <section>
         <h1>${employee.fullName}<a href="employees?uuid=${employee.uuid}&action=edit"><img src="../../img/pencil.png" alt="Редактировать" title="Редактировать данные сотрудника"></a></h1>
         <p>
@@ -105,8 +120,9 @@
         <br/>
         <button onclick="window.history.back()">ОК</button>
     </section>
+    </div>
     <div class="footer">
-        <p>&copy; Создано для внутреннего использования <a href="#">Главная</a></p>
+        <p>&copy; Создано для внутреннего использования <a href="/employees">Главная</a></p>
     </div>
 </div>
 </body>

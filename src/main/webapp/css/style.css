@@ -87,26 +87,6 @@ input[type=text],textarea,select {
 	border: 1px solid #bcbcbc;
 }
 
-input[type=text],textarea,button {
-	box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
-	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
-	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
-	-webkit-transition: all linear 0.2s;
-	-moz-transition: all linear 0.2s;
-	-ms-transition: all linear 0.2s;
-	-o-transition: all linear 0.2s;
-	transition: all linear 0.2s;
-}
-
-input[type=checkbox],input[type=radio] {
-	margin: 3px 5px 0 0;
-	float: left;
-}
-
-input[type=text] {
-	width: 200px;
-}
-
 select {
 	width: 210px;
 }

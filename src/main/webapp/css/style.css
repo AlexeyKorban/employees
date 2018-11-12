@@ -350,9 +350,9 @@ ul.rightNav li a:hover {
 	overflow: hidden;
 }
 
-.main img {
-	margin-right: 15px;
-	border: 10px solid #cfcfcf;
+a[href^="mailto:"] {
+	padding-left: 20px !important;
+	background: url(../img/email.png) no-repeat center left;
 }
 /*Подвал*/
 .footer {

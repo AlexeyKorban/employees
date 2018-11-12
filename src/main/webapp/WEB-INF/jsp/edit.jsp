@@ -15,8 +15,20 @@
 <head>
     <jsp:useBean id="employee" type="local.ldwx.model.Employee" scope="request"/>
     <title>${employee.fullName}</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+<div class="wrapper">
+    <div class="header">
+        <div class="logo"><a href="">Our<span class="black">Company</span><span class="gray">.ru</span></a>
+            <p>ГК Компания</p></div>
+        <ul class="nav">
+            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
 <section>
     <form method="post" action="employees" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="uuid" value="${employee.uuid}">
@@ -96,5 +108,9 @@
         <button onclick="window.history.back()">Отменить</button>
     </form>
 </section>
+<div class="footer">
+    <p>&copy; Создано для внутреннего использования <a href="#">Главная</a></p>
+</div>
+</div>
 </body>
 </html>

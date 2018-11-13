@@ -13,7 +13,7 @@
 <html>
 <head>
     <jsp:useBean id="employee" type="local.ldwx.model.Employee" scope="request"/>
-    <title>${employee.fullName}</title>
+    <title><c:out value="${employee.fullName}"/></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -44,7 +44,7 @@
             </div>
         </div>
     <section>
-        <h1>${employee.fullName}<a href="employees?uuid=${employee.uuid}&action=edit"><img src="../../img/pencil.png" alt="Редактировать" title="Редактировать данные сотрудника"></a></h1>
+        <h1><c:out value="${employee.fullName}"/><a href="employees?uuid=${employee.uuid}&action=edit"><img src="../../img/pencil.png" alt="Редактировать" title="Редактировать данные сотрудника"></a></h1>
         <p>
             <c:forEach var="contactEntry" items="${employee.contacts}">
                 <jsp:useBean id="contactEntry"
@@ -61,7 +61,7 @@
                 <c:set var="section" value="${sectionEntry.value}"/>
                 <jsp:useBean id="section" type="local.ldwx.model.Section"/>
                 <tr>
-                    <td colspan="2"><h2><a name="type.name">${type.title}</a></h2></td>
+                    <td colspan="2"><h2><a name="type.name"><c:out value="${type.title}"/></a></h2></td>
                 </tr>
                 <c:choose>
                     <c:when test="${type=='OBJECTIVE'}">
@@ -84,7 +84,7 @@
                             <td colspan="2">
                                 <ul>
                                     <c:forEach var="item" items="<%=((ListSection) section).getItems()%>">
-                                        <li>${item}</li>
+                                        <li><c:out value="${item}"/></li>
                                     </c:forEach>
                                 </ul>
                             </td>
@@ -96,10 +96,10 @@
                                 <td colspan="2">
                                     <c:choose>
                                         <c:when test="${empty org.homePage.url}">
-                                            <h3>${org.homePage.name}</h3>
+                                            <h3><c:out value="${org.homePage.name}"/></h3>
                                         </c:when>
                                         <c:otherwise>
-                                            <h3><a href="${org.homePage.url}">${org.homePage.name}</a></h3>
+                                            <h3><a href="${org.homePage.url}"><c:out value="${org.homePage.name}"/></a></h3>
                                         </c:otherwise>
                                     </c:choose>
                                 </td>
@@ -109,7 +109,7 @@
                                 <tr>
                                     <td width="15%" style="vertical-align: top"><%=HtmlUtil.formatDates(position)%>
                                     </td>
-                                    <td><b>${position.title}</b><br>${position.description}</td>
+                                    <td><b><c:out value="${position.title}"/></b><br><c:out value="${position.description}"/></td>
                                 </tr>
                             </c:forEach>
                         </c:forEach>

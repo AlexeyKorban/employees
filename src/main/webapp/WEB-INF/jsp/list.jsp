@@ -63,13 +63,13 @@
                 <c:forEach items="${employees}" var="employee">
                     <jsp:useBean id="employee" type="local.ldwx.model.Employee"/>
                     <tr>
-                        <td><a href="employees?uuid=${employee.uuid}&action=view">${employee.fullName}</a></td>
+                        <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=view"><c:out value="${employee.fullName}"/></a></td>
                         <td>
                             <%= employee.getSection(SectionType.OBJECTIVE) == null ? "Не указана" : employee.getSection(SectionType.OBJECTIVE)%>
                         </td>
                         <td><%=ContactType.MAIL.toHtml(employee.getContact(ContactType.MAIL))%></td>
-                        <td><a href="employees?uuid=${employee.uuid}&action=delete"><img src="../../img/delete.png" alt="Удалить" title="Удалить сотрудника"></a></td>
-                        <td><a href="employees?uuid=${employee.uuid}&action=edit"><img src="../../img/pencil.png" alt="Редактировать" title="Редактировать данные сотрудника"></a></td>
+                        <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=delete"><img src="../../img/delete.png" alt="Удалить" title="Удалить сотрудника"></a></td>
+                        <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=edit"><img src="../../img/pencil.png" alt="Редактировать" title="Редактировать данные сотрудника"></a></td>
                     </tr>
                 </c:forEach>
                 </tbody>

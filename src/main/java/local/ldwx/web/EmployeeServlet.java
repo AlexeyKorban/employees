@@ -146,6 +146,8 @@ public class EmployeeServlet extends HttpServlet {
                         }
                         e.setSection(type, new OrganizationSection(organizations));
                         break;
+                    default:
+                        break;
                 }
             }
         }

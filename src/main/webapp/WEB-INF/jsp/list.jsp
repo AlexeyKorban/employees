@@ -1,4 +1,6 @@
-<%@ page import="ru.ldwx.model.ContactType" %><%--
+<%@ page import="local.ldwx.model.ContactType" %>
+<%@ page import="local.ldwx.model.SectionType" %>
+<%@ page import="local.ldwx.model.TextSection" %><%--
   Created by IntelliJ IDEA.
   User: Loky
   Date: 01.11.2018
@@ -19,7 +21,7 @@
     <div class="header">
         <div class="logo"><a href="">Our<span class="black">Company</span><span class="gray">.ru</span></a><p>ГК Компания</p></div>
         <ul class="nav">
-            <li><a href="#" class="active">Главная</a></li>
+            <li><a href="/employees" class="active">Главная</a></li>
             <li><a href="#">О нас</a></li>
             <li><a href="#">Новости</a></li>
             <li><a href="#">Контакты</a></li>
@@ -59,13 +61,15 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${employees}" var="employee">
-                    <jsp:useBean id="employee" type="ru.ldwx.model.Employee"/>
+                    <jsp:useBean id="employee" type="local.ldwx.model.Employee"/>
                     <tr>
-                        <td><a href="employees?uuid=${employee.uuid}&action=view">${employee.fullName}</a></td>
-                        <td></td>
+                        <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=view"><c:out value="${employee.fullName}"/></a></td>
+                        <td>
+                            <%= employee.getSection(SectionType.OBJECTIVE) == null ? "Не указана" : employee.getSection(SectionType.OBJECTIVE)%>
+                        </td>
                         <td><%=ContactType.MAIL.toHtml(employee.getContact(ContactType.MAIL))%></td>
-                        <td><a href="employees?uuid=${employee.uuid}&action=delete">Удалить</a></td>
-                        <td><a href="employees?uuid=${employee.uuid}&action=edit">Редактировать</a></td>
+                        <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=delete"><img src="../../img/delete.png" alt="Удалить" title="Удалить сотрудника"></a></td>
+                        <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=edit"><img src="../../img/pencil.png" alt="Редактировать" title="Редактировать данные сотрудника"></a></td>
                     </tr>
                 </c:forEach>
                 </tbody>
@@ -73,7 +77,7 @@
         </div>
     </div>
     <div class="footer">
-        <p>&copy; Создано для внутреннего использования <a href="#">Главная</a></p>
+        <p>&copy; Создано для внутреннего использования <a href="/employees">Главная</a></p>
     </div>
 </div>
 </body>

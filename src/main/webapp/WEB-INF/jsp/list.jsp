@@ -1,6 +1,6 @@
-<%@ page import="local.ldwx.model.ContactType" %>
-<%@ page import="local.ldwx.model.SectionType" %>
-<%@ page import="local.ldwx.model.TextSection" %><%--
+<%@ page import="ru.ldwx.model.ContactType" %>
+<%@ page import="ru.ldwx.model.SectionType" %>
+<%@ page import="ru.ldwx.model.TextSection" %><%--
   Created by IntelliJ IDEA.
   User: Loky
   Date: 01.11.2018
@@ -61,7 +61,7 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${employees}" var="employee">
-                    <jsp:useBean id="employee" type="local.ldwx.model.Employee"/>
+                    <jsp:useBean id="employee" type="ru.ldwx.model.Employee"/>
                     <tr>
                         <td><a href="employees?uuid=<c:out value="${employee.uuid}"/>&action=view"><c:out value="${employee.fullName}"/></a></td>
                         <td>

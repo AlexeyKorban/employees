@@ -1,7 +1,7 @@
-<%@ page import="local.ldwx.model.ListSection" %>
-<%@ page import="local.ldwx.model.OrganizationSection" %>
-<%@ page import="local.ldwx.model.TextSection" %>
-<%@ page import="local.ldwx.util.HtmlUtil" %>
+<%@ page import="ru.ldwx.model.ListSection" %>
+<%@ page import="ru.ldwx.model.OrganizationSection" %>
+<%@ page import="ru.ldwx.model.TextSection" %>
+<%@ page import="ru.ldwx.util.HtmlUtil" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -12,7 +12,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:useBean id="employee" type="local.ldwx.model.Employee" scope="request"/>
+    <jsp:useBean id="employee" type="ru.ldwx.model.Employee" scope="request"/>
     <title><c:out value="${employee.fullName}"/></title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -48,7 +48,7 @@
         <p>
             <c:forEach var="contactEntry" items="${employee.contacts}">
                 <jsp:useBean id="contactEntry"
-                             type="java.util.Map.Entry<local.ldwx.model.ContactType, java.lang.String>"/>
+                             type="java.util.Map.Entry<ru.ldwx.model.ContactType, java.lang.String>"/>
                 <%=contactEntry.getKey().toHtml(contactEntry.getValue())%><br/>
             </c:forEach>
         </p>
@@ -56,10 +56,10 @@
         <table cellpadding="2">
             <c:forEach var="sectionEntry" items="${employee.sections}">
                 <jsp:useBean id="sectionEntry"
-                             type="java.util.Map.Entry<local.ldwx.model.SectionType, local.ldwx.model.Section>"/>
+                             type="java.util.Map.Entry<ru.ldwx.model.SectionType, ru.ldwx.model.Section>"/>
                 <c:set var="type" value="${sectionEntry.key}"/>
                 <c:set var="section" value="${sectionEntry.value}"/>
-                <jsp:useBean id="section" type="local.ldwx.model.Section"/>
+                <jsp:useBean id="section" type="ru.ldwx.model.Section"/>
                 <tr>
                     <td colspan="2"><h2><a name="type.name"><c:out value="${type.title}"/></a></h2></td>
                 </tr>
@@ -105,7 +105,7 @@
                                 </td>
                             </tr>
                             <c:forEach var="position" items="${org.positions}">
-                                <jsp:useBean id="position" type="local.ldwx.model.Organization.Position"/>
+                                <jsp:useBean id="position" type="ru.ldwx.model.Organization.Position"/>
                                 <tr>
                                     <td width="15%" style="vertical-align: top"><%=HtmlUtil.formatDates(position)%>
                                     </td>

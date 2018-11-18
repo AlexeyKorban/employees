@@ -1,9 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="local.ldwx.model.SectionType" %>
-<%@ page import="local.ldwx.model.ContactType" %>
-<%@ page import="local.ldwx.model.ListSection" %>
-<%@ page import="local.ldwx.model.OrganizationSection" %>
-<%@ page import="local.ldwx.util.DateUtil" %><%--
+<%@ page import="ru.ldwx.model.SectionType" %>
+<%@ page import="ru.ldwx.model.ContactType" %>
+<%@ page import="ru.ldwx.model.ListSection" %>
+<%@ page import="ru.ldwx.model.OrganizationSection" %>
+<%@ page import="ru.ldwx.util.DateUtil" %><%--
   Created by IntelliJ IDEA.
   User: Loky
   Date: 08.11.2018
@@ -13,7 +13,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:useBean id="employee" type="local.ldwx.model.Employee" scope="request"/>
+    <jsp:useBean id="employee" type="ru.ldwx.model.Employee" scope="request"/>
     <title>${employee.fullName}</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -61,7 +61,7 @@
                 <hr>
                 <c:forEach var="type" items="<%=SectionType.values()%>">
                     <c:set var="section" value="${employee.getSection(type)}"/>
-                    <jsp:useBean id="section" type="local.ldwx.model.Section"/>
+                    <jsp:useBean id="section" type="ru.ldwx.model.Section"/>
                     <h2><a>${type.title}</a></h2>
                     <c:choose>
                         <c:when test="${type=='OBJECTIVE'}">
@@ -89,7 +89,7 @@
                                 <br>
                                 <div style="margin-left: 30px">
                                     <c:forEach var="pos" items="${org.positions}">
-                                        <jsp:useBean id="pos" type="local.ldwx.model.Organization.Position"/>
+                                        <jsp:useBean id="pos" type="ru.ldwx.model.Organization.Position"/>
                                         <dl>
                                             <dt>Начальная дата:</dt>
                                             <dd>

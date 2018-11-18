@@ -1,4 +1,4 @@
-<%@ page import="local.ldwx.model.ContactType" %><%--
+<%@ page import="ru.ldwx.model.ContactType" %><%--
   Created by IntelliJ IDEA.
   User: Loky
   Date: 01.11.2018
@@ -59,7 +59,7 @@
                 </thead>
                 <tbody>
                 <c:forEach items="${employees}" var="employee">
-                    <jsp:useBean id="employee" type="local.ldwx.model.Employee"/>
+                    <jsp:useBean id="employee" type="ru.ldwx.model.Employee"/>
                     <tr>
                         <td><a href="employees?uuid=${employee.uuid}&action=view">${employee.fullName}</a></td>
                         <td></td>

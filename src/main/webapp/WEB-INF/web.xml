@@ -8,7 +8,7 @@
 
     <servlet>
         <servlet-name>employeeServlet</servlet-name>
-        <servlet-class>local.ldwx.web.EmployeeServlet</servlet-class>
+        <servlet-class>ru.ldwx.web.EmployeeServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>

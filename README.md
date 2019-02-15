@@ -6,3 +6,6 @@
 - деплой веб приложения
   - в контейнер сервлетов <a href="http://tomcat.apache.org/">Tomcat</a>
   - в облачный сервис <a href="https://www.heroku.com/">Heroku</a>
+  
+  TODO:
+  Heroku, Tests
